@@ -1,0 +1,173 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+@keyframes shake {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../../assets/montain-wp.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  gap: 15px;
+}
+form > button {
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  background: blueviolet;
+  color: #fff;
+  border: none;
+  transition: 0.1s;
+  cursor: pointer;
+  font-size: 1rem;
+}
+form > button:hover {
+  background: #6317a9;
+}
+
+input[type=radio] {
+  margin: 0 0.25rem;
+  line-height: 1.2rem;
+}
+
+label {
+  margin: 0.5rem 0.25rem;
+  line-height: 1.2rem;
+  color: #fff;
+}
+
+span {
+  color: crimson;
+  position: absolute;
+  left: 2px;
+  bottom: -18px;
+}
+
+.container {
+  padding: 10px 20px;
+  width: 70vw;
+}
+
+.address-container .radio-container, .id-container .radio-container, .name-container .radio-container {
+  position: relative;
+  margin-bottom: 1rem;
+}
+.address-container .input-box, .id-container .input-box, .name-container .input-box {
+  position: relative;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.address-container .input-box > input, .id-container .input-box > input, .name-container .input-box > input {
+  width: 100%;
+  height: 40px;
+  padding: 0 10px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  border: 3px solid transparent;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  color: #fff;
+}
+.address-container .input-box > input::-moz-placeholder, .id-container .input-box > input::-moz-placeholder, .name-container .input-box > input::-moz-placeholder {
+  color: #a3a3a3;
+}
+.address-container .input-box > input::placeholder, .id-container .input-box > input::placeholder, .name-container .input-box > input::placeholder {
+  color: #a3a3a3;
+}
+.address-container .input-box > input:focus::-moz-placeholder, .id-container .input-box > input:focus::-moz-placeholder, .name-container .input-box > input:focus::-moz-placeholder {
+  color: transparent;
+}
+.address-container .input-box > input:focus::placeholder, .id-container .input-box > input:focus::placeholder, .name-container .input-box > input:focus::placeholder {
+  color: transparent;
+}
+.address-container .input-box > input:focus, .id-container .input-box > input:focus, .name-container .input-box > input:focus {
+  border-bottom: 3px solid blueviolet;
+  animation: shake 0.2s;
+}
+.address-container .input-box > i, .id-container .input-box > i, .name-container .input-box > i {
+  position: absolute;
+  top: 37px;
+  transform: translateY(-50%);
+  right: 10px;
+  color: rgba(255, 255, 255, 0.3);
+  transition: 0.3s;
+}
+.address-container .input-box > input:focus ~ i, .id-container .input-box > input:focus ~ i, .name-container .input-box > input:focus ~ i {
+  color: blueviolet;
+}
+.address-container .input-box.error > i, .id-container .input-box.error > i, .name-container .input-box.error > i {
+  color: crimson;
+}
+.address-container .input-box.error > input:focus, .id-container .input-box.error > input:focus, .name-container .input-box.error > input:focus {
+  border-bottom: 3px solid crimson;
+  animation: shake 0.2s;
+}
+.address-container .input-box.error > input:focus ~ i, .id-container .input-box.error > input:focus ~ i, .name-container .input-box.error > input:focus ~ i {
+  color: crimson;
+}
+.address-container .input-box.success > i, .id-container .input-box.success > i, .name-container .input-box.success > i {
+  color: greenyellow;
+}
+.address-container .input-box.success > input:focus, .id-container .input-box.success > input:focus, .name-container .input-box.success > input:focus {
+  border-bottom: 3px solid greenyellow;
+}
+.address-container .input-box.success > input:focus ~ i, .id-container .input-box.success > input:focus ~ i, .name-container .input-box.success > input:focus ~ i {
+  color: greenyellow;
+}
+
+.radio-selector {
+  display: flex;
+}
+
+@media screen and (max-width: 425px) {
+  .radio-container {
+    display: block;
+  }
+}
+@media screen and (min-width: 425px) {
+  .name-container, .id-container {
+    grid-template-columns: repeat(1, 100%);
+  }
+  .radio-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+@media screen and (min-width: 768px) {
+  .name-container, .id-container, .address-container {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    gap: 10px;
+  }
+  .address-container {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+  }
+  .radio-container {
+    display: block;
+  }
+}/*# sourceMappingURL=main.css.map */

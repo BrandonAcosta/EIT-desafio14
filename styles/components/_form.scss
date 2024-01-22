@@ -1,0 +1,123 @@
+
+.container {
+    padding:10px 20px;
+    width: 70vw;
+}
+
+.address-container, .id-container, .name-container{
+    .radio-container{
+        position:relative;
+        margin-bottom: 1rem;
+    }
+    .input-box{
+        position:relative;
+        margin-bottom: 1rem;
+        width: 100%;
+        &>input{
+            width: 100%;
+            height: 40px;
+            padding: 0 10px;
+            outline:none;
+            background: $input-bg;
+            border:3px solid transparent;
+            letter-spacing: 1px;
+            transition:.3s;
+            color: $color-text;
+        }
+    
+        
+        &>input::placeholder{
+            color: $placeholder-text;
+        }
+        
+        &>input:focus::placeholder{
+            color:transparent;
+        }
+        
+        &>input:focus{
+            border-bottom:3px solid $color-main; // error/success
+            animation: shake .2s;
+        }
+        &>i{
+            position: absolute;
+            top:37px;
+            transform: translateY(-50%);
+            right: 10px;
+            color: $color-icon;
+            transition: .3s;
+        }
+        
+        &>input:focus ~ i{
+            color: $color-main; // error/success
+        }
+        
+        &.error{
+            &>i{
+                color: $color-error;
+            }
+            
+            &>input:focus{
+                border-bottom:3px solid $color-error; // error/success
+                animation: shake .2s;
+            }
+
+            &>input:focus ~ i{
+                color: $color-error; // error/success
+            }
+        }
+
+        &.success{
+            &>i{
+                color: $color-success;
+            }
+
+            &>input:focus{
+                border-bottom:3px solid $color-success; // error/success
+            }
+
+            &>input:focus ~ i{
+                color: $color-success; // error/success
+            }
+        }   
+    }
+}
+
+.radio-selector{
+    display: flex;
+}
+
+// --- Media queries ---
+@media screen and (max-width: 425px){
+    .radio-container{
+        display: block;
+    }
+}
+
+@media screen and (min-width: 425px){
+    .name-container, .id-container{
+        grid-template-columns: repeat(1,100%);
+    }
+    .radio-container{
+        display: flex;
+        flex-direction: row;
+    }
+    
+}
+
+@media screen and (min-width: 768px){
+    .name-container, .id-container, .address-container{
+        //display: flex;
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        gap: 10px;
+    }
+    .address-container{
+        display: grid;
+        grid-template-columns: repeat(1,100%);
+    }
+    .radio-container{
+        display: block;
+    }
+}
+
+

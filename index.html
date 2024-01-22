@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio14</title>
+
+    <link rel="stylesheet" href="./styles/main.css">
+    <script src="https://kit.fontawesome.com/b408879b64.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <form autocomplete="off" onsubmit="onSubmit(event)" >
+            <div class="name-container">
+                <div class="input-box">
+                    <label for="first-name">Primer Nombre</label>
+                    <input id="first-name" name="first-name" class="" type="text" placeholder="Nombre">
+                    <i class="fa-solid fa-user"></i>
+                    <span class="err-name"></span>
+                </div>
+    
+                <div class="input-box ">
+                    <label for="last-name">Primer apellido</label>
+                    <input id="last-name" name="last-name" class="" type="text" placeholder="Apellido" required>
+                    <i class="fa-solid fa-user"></i>
+                    <span class="err-lastname"></span>
+                </div>
+
+            </div>
+
+            <div class="id-container">
+                <div class="radio-container">
+                    <label for="id-type">Tipo de documento</label>
+                    <div class="radio-selector">
+                        <input id="dni" name="id-type" class="" type="radio">
+                        <label for="id-type">DNI</label>
+    
+                        <input id="cuil" name="id-type" class="" type="radio">
+                        <label for="id-type">CUIL</label>
+                        <span class="err-radio"></span>
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <label for="id-number">Número</label>
+                    <input id="id-number" name="id-number" class="" type="text" placeholder="Número">
+                    <i class="fa-solid fa-circle-info"></i>
+                    <span class="err-id-number"></span>
+                </div>
+            </div>
+            
+            <div class="address-container">
+                <div class="input-box">
+                    <label for="address">Dirección</label>
+                    <input id="address" name="address" class="" type="text" placeholder="Dirección" >
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span class="err-address"></span>
+                </div>
+            </div>
+
+            <button type="submit">Listo!</button>
+            
+        </form>
+
+    </div>
+    <script src="./js/validations.js"></script>
+</body>
+</html>

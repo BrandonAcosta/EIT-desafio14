@@ -1,0 +1,59 @@
+
+* {
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0 0 0 / .8),rgba(0 0 0 / .8)), $body-bg;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    height: 100vh;
+}
+
+form {
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+    gap:15px;
+    &>button{
+        width: 100%;
+        padding: 10px;
+        outline: none;
+        background: $color-main;
+        color: $color-text;
+        border:none;
+        transition: .1s;
+        cursor: pointer;
+        font-size: 1rem;
+        &:hover{
+            background: $color-main-dark;
+        }
+    }
+
+}
+ input[type="radio"]{
+    margin: 0 0.25rem;
+    line-height: 1.2rem;
+}
+
+label{
+    margin: 0.5rem 0.25rem;
+    line-height: 1.2rem;
+    color: $color-text;
+}
+
+span{
+    color: $color-error;
+    position: absolute;
+    left: 2px;
+    bottom: -18px;
+    //visibility: hidden;
+}
